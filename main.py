@@ -37,19 +37,19 @@ def main():
             print("4. Contraseña altamente segura")
             print("5. Contraseña personalizada")
 
-            opcion = input("\nElige una opción: ")
+            opcion = input("Elige una opción: ")
 
             if opcion == "1":
-                print("Contraseña generada:", generar_contraseña(16, excluir="@#{}"))
+                print("\nContraseña generada:", generar_contraseña(16, excluir="@#{}"))
             elif opcion == "2":
-                print("Contraseña para móviles:", generar_contraseña_moviles(12))
+                print("\nContraseña para móviles:", generar_contraseña_moviles(12))
             elif opcion == "3":
                 frase = input("Introduce una frase secreta: ")
-                print("Contraseña basada en hashing:", generar_contraseña_hash(frase, 12))
+                print("\nContraseña basada en hashing:", generar_contraseña_hash(frase, 12))
             elif opcion == "4":
-                print("Contraseña segura generada:", generar_contraseña_segura(16))
+                print("\nContraseña segura generada:", generar_contraseña_segura(16))
             elif opcion == "5":
-                longitud = int(input("Ingresa la longitud de la contraseña: "))
+                longitud = int(input("\nIngresa la longitud de la contraseña: "))
                 incluir_mayus = input("¿Incluir mayúsculas? (y/n): ").lower() == 'y'
                 incluir_minus = input("¿Incluir minúsculas? (y/n): ").lower() == 'y'
                 incluir_numeros = input("¿Incluir números? (y/n): ").lower() == 'y'
@@ -59,11 +59,11 @@ def main():
                 contraseña = generar_contraseña_personalizada(longitud, incluir_mayus, incluir_minus, incluir_numeros, incluir_simbolos, excluir)
                 
                 if contraseña:
-                    print("Contraseña personalizada generada:", contraseña)
+                    print("\nContraseña personalizada generada:", contraseña)
                 else:
-                    print("No se pudo generar una contraseña segura con esos parámetros. Intenta con una combinación diferente.")
+                    print("\nNo se pudo generar una contraseña segura con esos parámetros. Intenta con una combinación diferente.")
             else:
-                print("Opción inválida.")
+                print("\nOpción inválida.")
         elif choice == "3":
             break
         else:
