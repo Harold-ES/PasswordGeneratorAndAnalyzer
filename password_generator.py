@@ -7,9 +7,6 @@ import hashlib
 def generar_contraseña(longitud=12):
     caracteres = string.ascii_letters + string.digits + string.punctuation
     caracteres = ''.join(c for c in caracteres)
-    
-    if not caracteres:  
-        raise ValueError("No quedan caracteres disponibles después de la exclusión.")
 
     return ''.join(random.choice(caracteres) for _ in range(longitud))
 
