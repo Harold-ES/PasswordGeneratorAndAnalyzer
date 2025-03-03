@@ -1,4 +1,6 @@
 # password_analyzer.py
+
+
 import math
 
 # Calcular la entropia
@@ -31,21 +33,21 @@ def generar_recomendaciones(password, entropia):
     recomendaciones = []
     
     if entropia < 40:
-        recomendaciones.append("Usa una contraseña más larga (mínimo 12 caracteres).")
-        recomendaciones.append("Incluye letras mayúsculas, números y símbolos.")
+        recomendaciones.append("Use una contraseña más larga (mínimo 12 caracteres).")
+        recomendaciones.append("Incluya letras mayúsculas, números y símbolos.")
     elif entropia < 60:
         if not any(c.isupper() for c in password):
-            recomendaciones.append("Agrega al menos una letra mayúscula.")
+            recomendaciones.append("Agrege al menos una letra mayúscula.")
         if not any(c.isdigit() for c in password):
-            recomendaciones.append("Incluye al menos un número.")
+            recomendaciones.append("Incluya al menos un número.")
         if not any(c in "!@#$%^&*()-_=+[]{};:'\",.<>?/`~" for c in password):
-            recomendaciones.append("Añade un símbolo especial (!, @, #, etc.).")
+            recomendaciones.append("Añada un símbolo especial (!, @, #, etc.).")
     elif entropia < 80:
-        recomendaciones.append("Tu contraseña es decente, pero podría ser más segura.")
+        recomendaciones.append("Su contraseña es decente, pero podría ser más segura.")
         if len(password) < 14:
-            recomendaciones.append("Considera aumentar la longitud a 14+ caracteres.")
+            recomendaciones.append("Considere aumentar la longitud a 14+ caracteres.")
     elif entropia < 100:
-        recomendaciones.append("Buena contraseña, pero si puedes, usa una aún más larga.")
+        recomendaciones.append("Buena contraseña, pero si puede, use una aún más larga.")
     
     return recomendaciones
 
