@@ -30,14 +30,14 @@ def main():
                 print("¡Excelente contraseña! Asegúrate de recordarla o usar un gestor de contraseñas.")
 
         elif choice == "2":
-            print("Opciones de generación de contraseña:")
+            print("\nOpciones de generación de contraseña:")
             print("1. Contraseña estándar")
             print("2. Contraseña fácil para móviles")
             print("3. Contraseña basada en frase secreta (hashing)")
             print("4. Contraseña altamente segura")
             print("5. Contraseña personalizada")
 
-            opcion = input("Elige una opción (1-4): ")
+            opcion = input("\nElige una opción: ")
 
             if opcion == "1":
                 print("Contraseña generada:", generar_contraseña(16, excluir="@#{}"))
@@ -50,10 +50,10 @@ def main():
                 print("Contraseña segura generada:", generar_contraseña_segura(16))
             elif opcion == "5":
                 longitud = int(input("Ingresa la longitud de la contraseña: "))
-                incluir_mayus = input("¿Incluir mayúsculas? (s/n): ").lower() == 's'
-                incluir_minus = input("¿Incluir minúsculas? (s/n): ").lower() == 's'
-                incluir_numeros = input("¿Incluir números? (s/n): ").lower() == 's'
-                incluir_simbolos = input("¿Incluir caracteres especiales? (s/n): ").lower() == 's'
+                incluir_mayus = input("¿Incluir mayúsculas? (y/n): ").lower() == 'y'
+                incluir_minus = input("¿Incluir minúsculas? (y/n): ").lower() == 'y'
+                incluir_numeros = input("¿Incluir números? (y/n): ").lower() == 'y'
+                incluir_simbolos = input("¿Incluir caracteres especiales? (y/n): ").lower() == 'y'
                 excluir = input("¿Caracteres a excluir? (déjalo vacío si no hay): ")
 
                 contraseña = generar_contraseña_personalizada(longitud, incluir_mayus, incluir_minus, incluir_numeros, incluir_simbolos, excluir)
