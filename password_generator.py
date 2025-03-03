@@ -4,7 +4,7 @@ import string
 import hashlib
 
 
-def generate_password(longitud=12, excluir=""):
+def generar_contraseña(longitud=12, excluir=""):
     caracteres = string.ascii_letters + string.digits + string.punctuation
     caracteres = ''.join(c for c in caracteres if c not in excluir)
     
@@ -28,7 +28,7 @@ from password_analyzer import calcular_entropia
 
 def generar_contraseña_segura(longitud=12, intentos=10):
     for _ in range(intentos):
-        password = generate_password(longitud)
+        password = generar_contraseña(longitud)
         if calcular_entropia(password) > 60:
             return password
         
