@@ -4,9 +4,9 @@ import string
 import hashlib
 
 
-def generar_contraseña(longitud=12, excluir=""):
+def generar_contraseña(longitud=12):
     caracteres = string.ascii_letters + string.digits + string.punctuation
-    caracteres = ''.join(c for c in caracteres if c not in excluir)
+    caracteres = ''.join(c for c in caracteres)
     
     if not caracteres:  
         raise ValueError("No quedan caracteres disponibles después de la exclusión.")
