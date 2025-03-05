@@ -16,9 +16,9 @@ def generar_contraseña_moviles(longitud=12):
     return ''.join(random.choice(caracteres) for _ in range(longitud))
 
 
-def generar_contraseña_hash(frase, longitud=12):
-    hash_md5 = hashlib.md5(frase.encode()).hexdigest()
-    return hash_md5[:longitud]
+def generar_contraseña_hash(frase):
+    hash_md5 = hashlib.sha256(frase.encode()).hexdigest()
+    return hash_md5[:]
 
 
 from password_analyzer import calcular_entropia
