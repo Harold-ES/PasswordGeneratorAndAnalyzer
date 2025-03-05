@@ -46,7 +46,7 @@ def main():
                 print("\nContraseña para móviles:", generar_contraseña_moviles(16))
             elif opcion == "3":
                 frase = input("Introduzca una frase secreta: ")
-                print("\nContraseña basada en hashing:", generar_contraseña_hash(frase, 16))
+                print("\nContraseña basada en hashing:", generar_contraseña_hash(frase))
             elif opcion == "4":
                 print("\nContraseña segura generada:", generar_contraseña_segura(20))
             elif opcion == "5":
